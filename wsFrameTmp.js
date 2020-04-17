@@ -48,3 +48,12 @@ wss.on('connection', (ws) =>{
         }
     })
 });//Server end.
+
+   function buildHeader(purpose){
+        return{
+            version: 1,
+            requestId: uuid(),
+            messagePurpose: purpose,
+            messageType:'commandRequest'
+        }
+   }
